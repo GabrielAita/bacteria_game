@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_51gv2"]
 [ext_resource type="Texture2D" uid="uid://cb0ntrja8e4uf" path="res://sprites/characters/slime.png" id="1_phel2"]
+[ext_resource type="Texture2D" uid="uid://bebug1pasm3s" path="res://sprites/characters/spreadsheet.png" id="3_fbh3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6078b"]
 atlas = ExtResource("1_phel2")
@@ -39,29 +40,25 @@ region = Rect2(64, 32, 32, 32)
 atlas = ExtResource("1_phel2")
 region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hkgg6"]
-atlas = ExtResource("1_phel2")
-region = Rect2(0, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_okoks"]
+atlas = ExtResource("3_fbh3r")
+region = Rect2(121, 68, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qim5d"]
-atlas = ExtResource("1_phel2")
-region = Rect2(32, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy5go"]
+atlas = ExtResource("3_fbh3r")
+region = Rect2(153, 68, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l6yfb"]
-atlas = ExtResource("1_phel2")
-region = Rect2(64, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wowc"]
+atlas = ExtResource("3_fbh3r")
+region = Rect2(185, 68, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_amfd6"]
-atlas = ExtResource("1_phel2")
-region = Rect2(96, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmbga"]
+atlas = ExtResource("3_fbh3r")
+region = Rect2(217, 68, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vin5e"]
-atlas = ExtResource("1_phel2")
-region = Rect2(128, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1is2"]
-atlas = ExtResource("1_phel2")
-region = Rect2(160, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_y445t"]
+atlas = ExtResource("3_fbh3r")
+region = Rect2(249, 68, 32, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wig03"]
 animations = [{
@@ -104,22 +101,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hkgg6")
+"texture": SubResource("AtlasTexture_okoks")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qim5d")
+"texture": SubResource("AtlasTexture_yy5go")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l6yfb")
+"texture": SubResource("AtlasTexture_6wowc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_amfd6")
+"texture": SubResource("AtlasTexture_vmbga")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vin5e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1is2")
+"texture": SubResource("AtlasTexture_y445t")
 }],
 "loop": true,
 "name": &"walk",
@@ -133,15 +127,14 @@ radius = 49.0
 radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8m05"]
-radius = 8.0
+radius = 11.0
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_51gv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wig03")
-animation = &"walk"
-frame_progress = 0.203855
+animation = &"death"
 offset = Vector2(0, -6)
 
 [node name="detection area" type="Area2D" parent="."]
@@ -158,13 +151,21 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_tpsbd")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_g8m05")
 
+[node name="damaging_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="death_timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="detection area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection area" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_area_entered"]
+[connection signal="area_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_area_exited"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="damaging_cooldown" to="." method="_on_damaging_cooldown_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]

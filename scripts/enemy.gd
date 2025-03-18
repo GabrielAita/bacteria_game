@@ -6,8 +6,12 @@ var player = null
 
 var heatlh = 100
 var player_in_atack_zone = false
+var can_take_damage = true
+var in_killzone = false
 
 func _physics_process(delta: float) -> void:
+	deal_with_damage()
+	
 	if player_chase == true:
 		position += (player.position - position)/speed
 		move_and_collide(Vector2(0,0))
@@ -43,4 +47,41 @@ func _on_enemy_hitbox_body_exited(body: Node2D) -> void:
 		player_in_atack_zone = false
 
 func deal_with_damage():
-	pass
+	if player_in_atack_zone and Global.player_current_atack == true:
+		if can_take_damage == true:
+			heatlh = heatlh - 20
+			$damaging_cooldown.start()
+			can_take_damage = false
+			print("Enemy health ",+ heatlh)
+			if heatlh <= 0:
+				$AnimatedSprite2D.play("death")
+				$death_timer.start()
+
+	if in_killzone:
+		if can_take_damage:
+			heatlh = heatlh - 10
+			$damaging_cooldown.start()
+			can_take_damage = false
+			print("Enemy health ",+ heatlh)
+			if heatlh <= 0:
+				$AnimatedSprite2D.play("death")
+				$death_timer.start()
+
+
+func _on_damaging_cooldown_timeout() -> void:
+	can_take_damage = true
+
+
+func _on_enemy_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("killzone"):
+		in_killzone = true
+
+
+func _on_enemy_hitbox_area_exited(area: Area2D) -> void:
+	if area.is_in_group("killzone"):
+		in_killzone = false
+		
+
+
+func _on_death_timer_timeout() -> void:
+	self.queue_free()

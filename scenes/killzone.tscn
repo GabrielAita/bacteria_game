@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6apnc2kiwsdx"]
+
+[ext_resource type="Script" path="res://scripts/killzone.gd" id="1_6kfdw"]
+[ext_resource type="Texture2D" uid="uid://di27harypns6n" path="res://sprites/icon.svg" id="2_1lqxj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61bjf"]
+
+[node name="killzone" type="Area2D"]
+script = ExtResource("1_6kfdw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_61bjf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("2_1lqxj")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
