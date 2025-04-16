@@ -1,85 +1,85 @@
 [gd_scene load_steps=22 format=3 uid="uid://bb6v1ho03yxup"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_51gv2"]
-[ext_resource type="Texture2D" uid="uid://cb0ntrja8e4uf" path="res://sprites/characters/slime.png" id="1_phel2"]
+[ext_resource type="Texture2D" uid="uid://bhjb7r0nwlbyr" path="res://sprites/characters/player_v3.png" id="2_yvnw1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6078b"]
-atlas = ExtResource("1_phel2")
-region = Rect2(0, 384, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuk8w"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(0, 480, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_toapj"]
-atlas = ExtResource("1_phel2")
-region = Rect2(32, 384, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ephku"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(32, 480, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6dklg"]
-atlas = ExtResource("1_phel2")
-region = Rect2(64, 384, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0p8l"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(64, 480, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ua4ug"]
-atlas = ExtResource("1_phel2")
-region = Rect2(96, 384, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_edtye"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(96, 480, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o20je"]
-atlas = ExtResource("1_phel2")
-region = Rect2(128, 384, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvwq3"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(128, 480, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wkr72"]
-atlas = ExtResource("1_phel2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh6m1"]
+atlas = ExtResource("2_yvnw1")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7v4ac"]
-atlas = ExtResource("1_phel2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcqa7"]
+atlas = ExtResource("2_yvnw1")
 region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s40la"]
-atlas = ExtResource("1_phel2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lh1l"]
+atlas = ExtResource("2_yvnw1")
 region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yrwex"]
-atlas = ExtResource("1_phel2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_muduh"]
+atlas = ExtResource("2_yvnw1")
 region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hkgg6"]
-atlas = ExtResource("1_phel2")
-region = Rect2(0, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bs4e"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(128, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qim5d"]
-atlas = ExtResource("1_phel2")
-region = Rect2(32, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy7dg"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l6yfb"]
-atlas = ExtResource("1_phel2")
-region = Rect2(64, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_r24dh"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(32, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_amfd6"]
-atlas = ExtResource("1_phel2")
-region = Rect2(96, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu4xb"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(64, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vin5e"]
-atlas = ExtResource("1_phel2")
-region = Rect2(128, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7jul"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(96, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1is2"]
-atlas = ExtResource("1_phel2")
-region = Rect2(160, 128, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rp5ah"]
+atlas = ExtResource("2_yvnw1")
+region = Rect2(128, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wig03"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6078b")
+"texture": SubResource("AtlasTexture_cuk8w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_toapj")
+"texture": SubResource("AtlasTexture_ephku")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6dklg")
+"texture": SubResource("AtlasTexture_e0p8l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ua4ug")
+"texture": SubResource("AtlasTexture_edtye")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o20je")
+"texture": SubResource("AtlasTexture_qvwq3")
 }],
 "loop": true,
 "name": &"death",
@@ -87,16 +87,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wkr72")
+"texture": SubResource("AtlasTexture_hh6m1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7v4ac")
+"texture": SubResource("AtlasTexture_dcqa7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s40la")
+"texture": SubResource("AtlasTexture_7lh1l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yrwex")
+"texture": SubResource("AtlasTexture_muduh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bs4e")
 }],
 "loop": true,
 "name": &"idle",
@@ -104,22 +107,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hkgg6")
+"texture": SubResource("AtlasTexture_hy7dg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qim5d")
+"texture": SubResource("AtlasTexture_r24dh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l6yfb")
+"texture": SubResource("AtlasTexture_gu4xb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_amfd6")
+"texture": SubResource("AtlasTexture_l7jul")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vin5e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1is2")
+"texture": SubResource("AtlasTexture_rp5ah")
 }],
 "loop": true,
 "name": &"walk",
@@ -130,18 +130,19 @@ animations = [{
 radius = 49.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tpsbd"]
-radius = 7.07107
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8m05"]
-radius = 8.0
+radius = 15.1327
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_51gv2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_wig03")
-animation = &"walk"
-frame_progress = 0.203855
+animation = &"death"
+frame_progress = 0.135161
 offset = Vector2(0, -6)
 
 [node name="detection area" type="Area2D" parent="."]
@@ -150,21 +151,30 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection area"]
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_smkv2")
 
 [node name="Colision" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -7)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_tpsbd")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
-position = Vector2(0, -4)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_g8m05")
+
+[node name="damaging_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="death_timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="detection area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection area" to="." method="_on_detection_area_body_exited"]
+[connection signal="area_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_area_entered"]
+[connection signal="area_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_area_exited"]
 [connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
 [connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
+[connection signal="timeout" from="damaging_cooldown" to="." method="_on_damaging_cooldown_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]

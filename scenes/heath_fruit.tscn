@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtgneaag7v5j4"]
+
+[ext_resource type="Script" path="res://scripts/heath_fruit.gd" id="1_eryt7"]
+[ext_resource type="Texture2D" uid="uid://ciwhdu88amos1" path="res://sprites/PC Computer - Stardew Valley - Journey of the Prairie King.png" id="2_fcjbf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spo8u"]
+atlas = ExtResource("2_fcjbf")
+region = Rect2(400, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nch2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spo8u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agqql"]
+radius = 7.0
+
+[node name="health_fruit" type="Area2D"]
+script = ExtResource("1_eryt7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nch2w")
+autoplay = "default"
+frame_progress = 0.908773
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_agqql")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
