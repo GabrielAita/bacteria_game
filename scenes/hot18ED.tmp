@@ -1,0 +1,456 @@
+[gd_scene load_steps=9 format=3 uid="uid://dk5w6eio6o47t"]
+
+[ext_resource type="Texture2D" uid="uid://4py48pdn654o" path="res://sprites/Sprite sheets/Sprite sheet for Basic Pack.png" id="1_1bx4u"]
+[ext_resource type="Script" path="res://scripts/hotbar.gd" id="1_x63fr"]
+[ext_resource type="FontFile" uid="uid://c4nueunka0nmj" path="res://sprites/fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_r85ov"]
+[ext_resource type="Texture2D" uid="uid://w41mkggvwifk" path="res://sprites/Sprite sheets/buttons/Z_X_buttons.png" id="4_cg0rk"]
+[ext_resource type="Texture2D" uid="uid://batug71gugdt8" path="res://sprites/Sprite sheets/note_bg.png" id="4_jed4v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdo0s"]
+texture = ExtResource("1_1bx4u")
+region_rect = Rect2(418, 163, 12, 11)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jo4r3"]
+texture = ExtResource("4_cg0rk")
+region_rect = Rect2(3, 2, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6k08h"]
+texture = ExtResource("4_cg0rk")
+region_rect = Rect2(35, 2, 26, 28)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." node_paths=PackedStringArray("quantide_display", "vida_display", "objetivo_1_display", "objetivo_2_display", "objetivo_3_display", "objetivo_4_display", "objetivo_1_panel", "objetivo_2_panel", "objetivo_3_panel", "objetivo_4_panel")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x63fr")
+quantide_display = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer/Vida")
+vida_display = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer2/HBoxContainer/quantidade")
+objetivo_1_display = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/objetivo_1")
+objetivo_2_display = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/objetivo_2")
+objetivo_3_display = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer4/objetivo_3")
+objetivo_4_display = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer5/objetivo_4")
+objetivo_1_panel = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer/Panel")
+objetivo_2_panel = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/MarginContainer/Panel")
+objetivo_3_panel = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer4/MarginContainer/Panel")
+objetivo_4_panel = NodePath("MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer5/MarginContainer/Panel")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture = ExtResource("1_1bx4u")
+region_rect = Rect2(107, 11, 26, 26)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Vida" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "vida:"
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="quantidade" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "QTD:"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3"]
+custom_minimum_size = Vector2(268, 512)
+layout_mode = 2
+texture = ExtResource("4_jed4v")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 43
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="Obj" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Objetivos:"
+autowrap_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qdo0s")
+
+[node name="objetivo_1" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Elimine X inimigos
+"
+autowrap_mode = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qdo0s")
+
+[node name="objetivo_2" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Elimine X inimigos
+"
+autowrap_mode = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer4/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qdo0s")
+
+[node name="objetivo_3" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Elimine X inimigos
+"
+autowrap_mode = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer5/MarginContainer"]
+visible = false
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qdo0s")
+
+[node name="objetivo_4" type="Label" parent="MarginContainer/MarginContainer2/HBoxContainer/VBoxContainer/MarginContainer3/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Elimine X inimigos
+"
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture = ExtResource("1_1bx4u")
+region_rect = Rect2(107, 11, 26, 26)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer3"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Control2" type="Control" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="zoom_in" type="Label" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Zoom In:"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_jo4r3")
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="VBoxContainer" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="zoom_out" type="Label" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Zoom Out:"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer3/HBoxContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_6k08h")
+
+[node name="MarginContainer" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_1bx4u")
+region_rect = Rect2(275, 212, 90, 25)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_right = 200.0
+offset_bottom = 52.0
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_1bx4u")
+region_rect = Rect2(201, 9, 30, 30)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Vida" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "vida:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer2"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_1bx4u")
+region_rect = Rect2(201, 9, 30, 30)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Control" type="Control" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+
+[node name="quantidade" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/NinePatchRect/HBoxContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_r85ov")
+theme_override_font_sizes/font_size = 30
+text = "Qtd:"

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://chfdc75sws53o"]
+
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="1_j453k"]
+[ext_resource type="Texture2D" uid="uid://ciwhdu88amos1" path="res://sprites/PC Computer - Stardew Valley - Journey of the Prairie King.png" id="2_3pnma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h20ua"]
+radius = 11.507
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14hvl"]
+atlas = ExtResource("2_3pnma")
+region = Rect2(448, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ym2mq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14hvl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dldkv"]
+
+[node name="Spawn_area" type="Area2D"]
+script = ExtResource("1_j453k")
+
+[node name="spawn_area" type="CollisionShape2D" parent="."]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_h20ua")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ym2mq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dldkv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

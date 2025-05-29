@@ -1,0 +1,618 @@
+[gd_scene load_steps=14 format=3 uid="uid://bijdfiv2dyv4t"]
+
+[ext_resource type="Texture2D" uid="uid://c5rk2y5dv6fsl" path="res://sprites/fundo_tela_lvl_select.png" id="1_ahsv8"]
+[ext_resource type="Script" path="res://scripts/lvl_select_menu.gd" id="1_wva5n"]
+[ext_resource type="Texture2D" uid="uid://4py48pdn654o" path="res://sprites/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_cat4b"]
+[ext_resource type="Texture2D" uid="uid://bgpusj262kyk8" path="res://sprites/Sprite sheets/buttons/Square Buttons 26x19.png" id="3_atvya"]
+[ext_resource type="FontFile" uid="uid://c4nueunka0nmj" path="res://sprites/fonts/pixelFont-7-8x14-sproutLands.ttf" id="4_c06nf"]
+[ext_resource type="Texture2D" uid="uid://dcm2r2jet6cl0" path="res://sprites/Sprite sheets/placa_petri.png" id="4_v7vt0"]
+[ext_resource type="Texture2D" uid="uid://cr0xdfc04dqw1" path="res://sprites/Sprite sheets/Setting menu.png" id="6_l16ug"]
+[ext_resource type="Texture2D" uid="uid://batug71gugdt8" path="res://sprites/Sprite sheets/note_bg.png" id="7_0hffp"]
+[ext_resource type="Texture2D" uid="uid://dscpjkk5o6p75" path="res://sprites/Sprite sheets/UI Big Play Button.png" id="9_2rebl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qvtos"]
+texture = ExtResource("4_v7vt0")
+region_rect = Rect2(177, 206, 667, 633)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ii4kn"]
+texture = ExtResource("4_v7vt0")
+region_rect = Rect2(174, 201, 671, 631)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqvir"]
+texture = ExtResource("9_2rebl")
+region_rect = Rect2(99, 36, 90, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_buwsp"]
+texture = ExtResource("9_2rebl")
+region_rect = Rect2(3, 34, 90, 27)
+
+[node name="lvl_select_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." node_paths=PackedStringArray("lvl1", "lvl2", "lvl3")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wva5n")
+lvl1 = NodePath("lvl1_container")
+lvl2 = NodePath("lvl2_container")
+lvl3 = NodePath("lvl3_container")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_ahsv8")
+
+[node name="lvlContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+
+[node name="Control" type="Control" parent="MarginContainer/lvlContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/lvlContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvlContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+texture = ExtResource("2_cat4b")
+region_rect = Rect2(293, 5, 38, 38)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+texture = ExtResource("3_atvya")
+region_rect = Rect2(59, 7, 26, 18)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="lvl_label" type="Label" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Level 1
+"
+
+[node name="lvl_1_button" type="Button" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_qvtos")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvtos")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ii4kn")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+texture = ExtResource("3_atvya")
+region_rect = Rect2(59, 7, 26, 18)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="lvl_label" type="Label" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Level 2
+"
+
+[node name="lvl_2_button" type="Button" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_qvtos")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvtos")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ii4kn")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
+custom_minimum_size = Vector2(90, 50)
+layout_mode = 2
+texture = ExtResource("3_atvya")
+region_rect = Rect2(59, 7, 26, 18)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="lvl_label" type="Label" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Level 3
+"
+
+[node name="lvl_3_button" type="Button" parent="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxTexture_qvtos")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qvtos")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ii4kn")
+
+[node name="Control" type="Control" parent="MarginContainer/lvlContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="tutorialContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/tutorialContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/tutorialContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(400, 550)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+texture = ExtResource("6_l16ug")
+region_rect = Rect2(139, 12, 106, 122)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="Control" type="Control" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TITLE" type="Label" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 40
+text = "TUTORIAL
+"
+autowrap_mode = 3
+uppercase = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TXT1" type="Label" parent="MarginContainer/tutorialContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Começaremos com um treinamento seguro dentro de uma placa de Petri, um ambiente controlado usado por cientistas para estudar microrganismos. Depois, você enfrentará os desafios reais: as células de defesa do sistema imunológico e, por fim, a temida exposição aos antibióticos.
+"
+autowrap_mode = 3
+uppercase = true
+
+[node name="Control" type="Control" parent="MarginContainer/tutorialContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/tutorialContainer"]
+layout_mode = 2
+
+[node name="lvl1_container" type="MarginContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 20
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvl1_container"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+texture = ExtResource("7_0hffp")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/lvl1_container"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/lvl1_container/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/lvl1_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/lvl1_container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/lvl1_container/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Nivel1_label" type="Label" parent="MarginContainer/lvl1_container/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 26
+text = "NIVEL 1
+"
+uppercase = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/lvl1_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nivel1_label" type="Label" parent="MarginContainer/lvl1_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "A batalha contra os Macrófagos
+"
+uppercase = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/lvl1_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="Control" type="Control" parent="MarginContainer/lvl1_container/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TXT1" type="Label" parent="MarginContainer/lvl1_container/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(470, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Os macrófagos são células de defesa do sistema imunológico que englobam e destroem microrganismos invasores, como as bactérias. Eles são como os “lixeiros” do corpo, limpando tudo que possa representar uma ameaça.
+
+Desafio da Fase:
+✅ Desviar dos macrófagos, que tentarão capturá-lo.
+✅ Sobreviver o máximo de tempo possível.
+✅ Encontrar pontos seguros para se esconder ou se mover rapidamente.
+
+Curiosidade: O nome macrófago significa \"grande comedor\" — e eles realmente devoram as bactérias para proteger o corpo!
+
+"
+autowrap_mode = 3
+uppercase = true
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvl1_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = 23
+
+[node name="lvl1_play" type="Button" parent="MarginContainer/lvl1_container/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 69)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_oqvir")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oqvir")
+theme_override_styles/normal = SubResource("StyleBoxTexture_buwsp")
+
+[node name="lvl2_container" type="MarginContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 20
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvl2_container"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+texture = ExtResource("7_0hffp")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/lvl2_container"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/lvl2_container/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/lvl2_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nivel1_label" type="Label" parent="MarginContainer/lvl2_container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 26
+text = "NIVEL 2"
+uppercase = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/lvl2_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Control2" type="Control" parent="MarginContainer/lvl2_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Nivel1_label" type="Label" parent="MarginContainer/lvl2_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "O ataque combinado: Linfócitos e Macrófagos
+"
+uppercase = true
+
+[node name="Control" type="Control" parent="MarginContainer/lvl2_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/lvl2_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="Control" type="Control" parent="MarginContainer/lvl2_container/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TXT1" type="Label" parent="MarginContainer/lvl2_container/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(470, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Os linfócitos, especialmente os do tipo T citotóxicos, são responsáveis por reconhecer e destruir células infectadas ou invasores como você.
+
+Desafio da Fase:
+✅ Desviar dos macrófagos que tentam engolir você.
+✅ Evitar os linfócitos, que atacam à distância ou de forma mais rápida.
+✅ Pensar estrategicamente: onde se esconder? Como atacar?
+
+Curiosidade: Os linfócitos são altamente especializados e podem \"memorizar\" o invasor, deixando o sistema imunológico mais rápido em futuras infecções!"
+autowrap_mode = 3
+uppercase = true
+
+[node name="Control2" type="Control" parent="MarginContainer/lvl2_container/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvl2_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = 23
+
+[node name="lvl2_play" type="Button" parent="MarginContainer/lvl2_container/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 69)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_oqvir")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oqvir")
+theme_override_styles/normal = SubResource("StyleBoxTexture_buwsp")
+
+[node name="lvl3_container" type="MarginContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/lvl3_container"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+texture = ExtResource("7_0hffp")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/lvl3_container"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Control" type="Control" parent="MarginContainer/lvl3_container/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/lvl3_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nivel1_label" type="Label" parent="MarginContainer/lvl3_container/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 26
+text = "NIVEL 3
+"
+uppercase = true
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/lvl3_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Control2" type="Control" parent="MarginContainer/lvl3_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Nivel1_label" type="Label" parent="MarginContainer/lvl3_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.952941, 0.898039, 0.760784, 1)
+theme_override_colors/font_outline_color = Color(0.768627, 0.603922, 0.423529, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "A exposição aos Antibióticos: o ambiente hostil
+"
+uppercase = true
+
+[node name="Control" type="Control" parent="MarginContainer/lvl3_container/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/lvl3_container/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="Control" type="Control" parent="MarginContainer/lvl3_container/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="TXT1" type="Label" parent="MarginContainer/lvl3_container/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(470, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_c06nf")
+theme_override_font_sizes/font_size = 20
+text = "Os antibióticos são substâncias usadas para eliminar bactérias, bloqueando funções vitais como a reprodução ou a produção de proteínas essenciais.
+Porém, algumas bactérias conseguem sobreviver, desenvolvendo resistência
+Desafio da Fase:
+✅ Evitar áreas contaminadas com antibióticos que causam dano contínuo.
+✅ Lutar contra os macrófagos e linfócitos ao mesmo tempo.
+✅ Buscar nutrientes e rotas seguras para sobreviver neste ambiente letal.
+
+Curiosidade: O uso inadequado de antibióticos pode gerar bactérias resistentes, um dos maiores problemas de saúde pública atualmente."
+autowrap_mode = 3
+uppercase = true
+
+[node name="Control2" type="Control" parent="MarginContainer/lvl3_container/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/lvl3_container/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_bottom = 23
+
+[node name="lvl3_play" type="Button" parent="MarginContainer/lvl3_container/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 69)
+layout_mode = 2
+theme_override_styles/hover = SubResource("StyleBoxTexture_oqvir")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_oqvir")
+theme_override_styles/normal = SubResource("StyleBoxTexture_buwsp")
+
+[connection signal="pressed" from="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer/lvl_1_button" to="MarginContainer" method="_on_lvl_1_button_pressed"]
+[connection signal="pressed" from="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2/lvl_2_button" to="MarginContainer" method="_on_lvl_2_button_pressed"]
+[connection signal="pressed" from="MarginContainer/lvlContainer/VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer3/lvl_3_button" to="MarginContainer" method="_on_lvl_3_button_pressed"]
+[connection signal="pressed" from="MarginContainer/lvl1_container/VBoxContainer/MarginContainer/lvl1_play" to="MarginContainer" method="_on_lvl_1_play_pressed"]
+[connection signal="pressed" from="MarginContainer/lvl2_container/VBoxContainer/MarginContainer/lvl2_play" to="MarginContainer" method="_on_lvl_2_play_pressed"]
+[connection signal="pressed" from="MarginContainer/lvl3_container/VBoxContainer/MarginContainer/lvl3_play" to="MarginContainer" method="_on_lvl_3_play_pressed"]

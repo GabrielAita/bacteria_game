@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx2nj4ulavocd"]
+
+[ext_resource type="Script" path="res://scripts/activate_atack.gd" id="1_ato80"]
+[ext_resource type="Texture2D" uid="uid://btl5byugp0squ" path="res://sprites/pickups/Pickups.png" id="2_25gkp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adpsp"]
+atlas = ExtResource("2_25gkp")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhgv5"]
+atlas = ExtResource("2_25gkp")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ho4yn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhgv5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mb1k"]
+radius = 8.06226
+
+[node name="activate_atack" type="Area2D"]
+script = ExtResource("1_ato80")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ho4yn")
+autoplay = "default"
+frame_progress = 0.231309
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1mb1k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
